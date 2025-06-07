@@ -341,7 +341,7 @@
                     <div class="col-lg-6">
                         <h4>ChotiParchi - Voice-to-Prescription Solution</h4>
                         <p>Winner of Ekathon 2025 - Developed a voice-enabled prescription generation system that streamlines doctor-patient interactions. Built during Eka.Care's hackathon in collaboration with AWS, the solution enables doctors to generate prescriptions through voice commands while traveling or during emergencies.</p>
-                        <p><strong>Tech:</strong> Python, FastAPI, AWS (Transcribe, Lambda), Speech-to-Text APIs</p>
+                        <p><strong>Tech:</strong> Python, FastAPI, AWS</p>
                         <p><strong>Key Features:</strong> Real-time voice transcription, secure doctor authentication, automated PDF generation, instant patient delivery</p>
                     </div>
                     
@@ -349,8 +349,9 @@
                     <div class="col-lg-6">
                         <h4>StaySafe Wildlife Detection</h4>
                         <p>Created an Android app for real-time wild animal detection via video feeds, enhancing on-campus safety. Integrated computer vision for animal detection and Firebase for data management.</p>
-                        <p><strong>Tech:</strong> Android, Machine Learning, IoT</p>
-                        <a href="https://github.com/shkaushal/StaySafe" target="_blank">GitHub Repository</a>
+                        <p><strong>Tech:</strong> Android, TensorFlow Lite, Firebase, OpenCV</p>
+                        <p><strong>Key Features:</strong> Real-time animal detection, instant alerts, geofencing, historical data tracking</p>
+                        <p><a href="https://github.com/shkaushal/StaySafe" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bx bxl-github"></i> View on GitHub</a></p>
                     </div>
         
                     <!-- Project 2: Electricity Load Forecasting -->
@@ -358,6 +359,7 @@
                         <h4>Electricity Load Forecasting</h4>
                         <p>Built an ML-based web app to forecast electricity demand across Madhya Pradesh, aiding efficient energy distribution. Implemented using Django and PostgreSQL with machine learning models.</p>
                         <p><strong>Tech:</strong> Django, PostgreSQL, Machine Learning, Python</p>
+                        <p><strong>Key Features:</strong> Time-series forecasting, interactive dashboards, data visualization, automated reporting</p>
                     </div>
         
                     <!-- Project 3: Movie Recommendation -->
@@ -365,7 +367,8 @@
                         <h4>Movie Recommendation</h4>
                         <p>Developed a Machine Learning model using LDA topic modeling to recommend movies based on plot similarity. Processed 35,000+ movie plots for accurate recommendations.</p>
                         <p><strong>Tech:</strong> Python, Machine Learning, NLP, LDA</p>
-                        <a href="https://github.com/shkaushal/MovieRecommendation" target="_blank">GitHub Repository</a>
+                        <p><strong>Key Features:</strong> Content-based filtering, topic modeling, similarity scoring, personalized recommendations</p>
+                        <p><a href="https://github.com/shkaushal/MovieRecommendation" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bx bxl-github"></i> View on GitHub</a></p>
                     </div>
         
                     <!-- Project 4: Test Your Knowledge -->
@@ -373,6 +376,7 @@
                         <h4>Test Your Knowledge</h4>
                         <p>Django-based quizzing application with user authentication, quiz selection, and score tracking. Frontend built with Bootstrap for a responsive design.</p>
                         <p><strong>Tech:</strong> Django, Python, Bootstrap, PostgreSQL</p>
+                        <p><strong>Key Features:</strong> User authentication, dynamic quiz generation, real-time scoring, performance analytics</p>
                     </div>
         
                     <!-- Project 5: BusKaro -->
@@ -380,7 +384,8 @@
                         <h4>BusKaro</h4>
                         <p>Web-based Bus Booking Portal for IIIT Jabalpur with user authentication, booking management, and seat selection. Built with PHP and Bootstrap.</p>
                         <p><strong>Tech:</strong> PHP, MySQL, Bootstrap, HTML/CSS</p>
-                        <a href="https://github.com/shkaushal/BusKaro" target="_blank">GitHub Repository</a>
+                        <p><strong>Key Features:</strong> Real-time seat booking, payment integration, booking history, admin dashboard</p>
+                        <p><a href="https://github.com/shkaushal/BusKaro" target="_blank" class="btn btn-sm btn-outline-primary"><i class="bx bxl-github"></i> View on GitHub</a></p>
                     </div>
                 </div>
             </div>
@@ -428,17 +433,25 @@
                     <div class="col-lg-6">
                         <h4>Send a Message</h4>
                         <form action="https://formspree.io/f/xrbqwljj" method="POST" class="php-email-form">
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="name">Your Name</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
+                                <input type="text" name="name" class="form-control" id="name" required minlength="2" placeholder="Enter your name">
+                                <div class="invalid-feedback">Please enter a valid name (minimum 2 characters)</div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="email">Your Email</label>
-                                <input type="email" name="email" class="form-control" id="email" required>
+                                <input type="email" name="email" class="form-control" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter your email">
+                                <div class="invalid-feedback">Please enter a valid email address</div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <label for="message">Message</label>
-                                <textarea name="message" rows="5" class="form-control" id="message" required></textarea>
+                                <textarea name="message" rows="5" class="form-control" id="message" required minlength="10" placeholder="Your message here..."></textarea>
+                                <div class="invalid-feedback">Please enter your message (minimum 10 characters)</div>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Sending...</div>
+                                <div class="error-message">An error occurred. Please try again.</div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Send Message</button>
